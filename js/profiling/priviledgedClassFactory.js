@@ -1,0 +1,2 @@
+var priviledgedClassFactory = function(methodsCount) {
+};

@@ -1,0 +1,2 @@
+var Widget = (function() {
+})();

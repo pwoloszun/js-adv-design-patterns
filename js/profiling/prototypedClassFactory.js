@@ -1,0 +1,2 @@
+var prototypedClassFactory = function(methodsCount) {
+};

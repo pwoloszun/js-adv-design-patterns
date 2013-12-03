@@ -1,0 +1,2 @@
+var PersonWidget = declare([Widget], {
+});
