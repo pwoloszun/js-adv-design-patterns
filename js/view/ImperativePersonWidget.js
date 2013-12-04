@@ -1,0 +1,2 @@
+var ImperativePersonWidget = declare([ImperativeWidget], {
+});

@@ -1,20 +1,24 @@
 function runBenchmark(params) {
-  //console.time(timerName);
-  //console.timeEnd(timerName);
+//  console.time(params.name);
+//  console.timeEnd(params.name);
 }
 
-var METHODS_COUNT = 10;
-var INSTANCES_COUNT = 1000;
-runBenchmark({
-  name: "priviledged",
-  classFactory: priviledgedClassFactory,
-  methodsCount: METHODS_COUNT,
-  instancesCount: INSTANCES_COUNT
-});
+function exampleBenchmarkRun() {
+  var methodsCount = 10;
+  var instancesCount = 1000;
 
-runBenchmark({
-  name: "prototyped",
-  classFactory: prototypedClassFactory,
-  methodsCount: METHODS_COUNT,
-  instancesCount: INSTANCES_COUNT
-});
+  runBenchmark({
+    name: "privileged",
+    classFactory: privilegedClassFactory,
+    methodsCount: methodsCount,
+    instancesCount: instancesCount
+  });
+
+  runBenchmark({
+    name: "prototyped",
+    classFactory: prototypedClassFactory,
+    methodsCount: methodsCount,
+    instancesCount: instancesCount
+  });
+}
+//exampleBenchmarkRun();

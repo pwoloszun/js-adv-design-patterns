@@ -1,0 +1,2 @@
+var DeclarativeWidget = (function() {
+})();

@@ -1,0 +1,2 @@
+var ImperativeWidget = (function() {
+})();
