@@ -19,6 +19,14 @@ function declareTestStage1() {
   instance = new User(login, passwd, perms);
   assertEq(instance.login, login);
   assertEq(instance.getLogin(), login);
+
+  var Greeter = declare([], {
+    greet: function() {
+      return "Hi!";
+    }
+  });
+  instance = new Greeter();
+  assertEq(instance.greet(), "Hi!");
 }
 
 declareTestStage1();
