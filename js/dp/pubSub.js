@@ -10,9 +10,9 @@ function pubSubExampleUsage() {
     log("resultsUpdate published", arguments);
   });
 
-  pubSub.publish("buttonClicked", [1, "qq"]);
+  pubSub.publish("buttonClick", [1, "qq"]);
   pubSub.publish("resultsUpdate", [1, "qq"]);
   pubSub.unsubscribe("resultsUpdate");
-  pubSub.publish("buttonClicked");
+  pubSub.publish("buttonClick");
   pubSub.publish("resultsUpdate");
 }
