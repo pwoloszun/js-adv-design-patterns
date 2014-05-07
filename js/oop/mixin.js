@@ -1,4 +1,5 @@
 // Implement mixin(destination, source) function.
+
 function mixinExampleUsage() {
   function User(login) {
     this.login = login;
@@ -17,12 +18,18 @@ function mixinExampleUsage() {
   user.encrypt("login"); // => "some encrypted login"
 }
 
-function mixinExampleUsage() {
+function mixinExampleUsage2() {
   var bob = {name: "Bob"};
 
   // create modules:
   // + Teacher with methods: teach()
   // + Dancer with methods: dance()
+  var Teacher = {
+    teach: function() {
+      console.log("teach");
+    }
+  };
+
   mixin(bob, Teacher);
   mixin(bob, Dancer);
 
