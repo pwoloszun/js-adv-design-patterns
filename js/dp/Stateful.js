@@ -1,11 +1,11 @@
 // Implement Stateful class using Evented
-function statefulExampleUsage() {
-  var Person = declare([Stateful], {
-  });
-  var bob = new Person({
+function statefulExampleUsage(mixin, Stateful) {
+  var bob = {
     name: "Bob",
     age: 22
-  });
+  };
+  mixin(bob, Stateful);
+
   bob.watch("name", function(oldValue, newValue) {
     log("name changed from:", oldValue, "to:", newValue);
   });
