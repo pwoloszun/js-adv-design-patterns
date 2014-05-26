@@ -1,6 +1,6 @@
 // Implement mixin(destination, source) function.
 
-function mixinExampleUsage() {
+function mixinClassExampleUsage() {
   function User(login) {
     this.login = login;
   }
@@ -9,19 +9,20 @@ function mixinExampleUsage() {
     return this.login;
   };
 
-  // create Encryptable module with methods:
+  // TODO: create Encryptable module (Singleton) with methods:
   // + encrypt(propertyName)
   // + getEncrypted(propertyName)
   mixin(User.prototype, Encryptable);
 
   var user = new User("bob");
   user.encrypt("login"); // => "some encrypted login"
+  user.getEncrypted("login");
 }
 
-function mixinExampleUsage2() {
+function mixinInstanceExampleUsage() {
   var bob = {name: "Bob"};
 
-  // create modules:
+  // TODO: create modules (Singletons):
   // + Teacher with methods: teach()
   // + Dancer with methods: dance()
   var Teacher = {

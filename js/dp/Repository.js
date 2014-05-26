@@ -5,11 +5,11 @@ function repositoryTest(usersRepository) {
     assertEqual(users.length, 3);
   });
 
-  usersRepository.find({id: 2}, function(user) {
+  usersRepository.findById(2, function(user) {
     assertEqual(user.name, "Batman");
   });
 
-  usersRepository.find({id: 997}, function(user) {
+  usersRepository.findById(997, function(user) {
     assertEqual(user, undefined);
   });
 }

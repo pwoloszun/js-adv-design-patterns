@@ -1,5 +1,5 @@
 // Implement pubSub service using Evented.
-function pubSubExampleUsage() {
+function pubSubExampleUsage(pubSub) {
   pubSub.subscribe("buttonClick", function() {
     log("buttonClicked published", arguments);
   });
@@ -10,9 +10,11 @@ function pubSubExampleUsage() {
     log("resultsUpdate published", arguments);
   });
 
+
+
   pubSub.publish("buttonClick", [1, "qq"]);
   pubSub.publish("resultsUpdate", [1, "qq"]);
-  pubSub.unsubscribe("resultsUpdate");
+//  pubSub.unsubscribe("resultsUpdate");
   pubSub.publish("buttonClick");
   pubSub.publish("resultsUpdate");
 }
