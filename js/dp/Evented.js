@@ -4,10 +4,10 @@ function eventedExampleUsage(Evented) {
   mixin(bob, Evented);
 
   bob.on("remove", function() {
-    log("remove triggered", arguments);
+    log(this.name, "remove triggered", arguments);
   });
   bob.on("remove", function() {
-    log("2nd remove triggered", arguments);
+    log(this.name, "2nd remove triggered", arguments);
   });
   bob.trigger("remove", [1, "qq"]); // loged msg on console
 
