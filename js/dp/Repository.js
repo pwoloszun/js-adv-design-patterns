@@ -1,3 +1,11 @@
+//var promise = $.get("server/users.json"); // AJAX request
+//promise.success(function(data) {
+//  console.log("Data from server", data);
+//});
+//promise.error(function(error) {
+//  console.log("Server error", error);
+//});
+
 function repositoryTest(usersRepository) {
   var allUsers, user;
 
@@ -13,3 +21,5 @@ function repositoryTest(usersRepository) {
     assertEqual(user, undefined);
   });
 }
+
+//repositoryTest(usersRepository);

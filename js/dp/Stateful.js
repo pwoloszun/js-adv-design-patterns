@@ -1,9 +1,6 @@
 // Implement Stateful class using Evented
 function statefulExampleUsage(mixin, Stateful) {
-  var bob = {
-    name: "Bob",
-    age: 22
-  };
+  var bob = {};
   mixin(bob, Stateful);
 
   bob.watch("name", function(oldValue, newValue) {
@@ -15,7 +12,7 @@ function statefulExampleUsage(mixin, Stateful) {
   bob.watchAll(function(attributeName, oldValue, newValue) {
     log("Attribute:", attributeName, " changed:", oldValue, newValue);
   });
-  bob.set("name", "Bob II");
+  bob.set("name", 123);
   bob.set("birthDate", new Date());
   bob.get("name");
   bob.toJSON();

@@ -17,25 +17,4 @@ function pubSubExampleUsage(pubSub) {
   pubSub.publish("buttonClick");
   pubSub.publish("resultsUpdate");
 }
-
-// MessagesController.js
-function MessagesController(pubSub) {
-  pubSub.subscribe("form:button:click", function(action, user) {
-    // display notifications
-    console.log(action, user);
-  });
-}
-
-// FormController.js
-function FormController(pubSub) {
-  var user = {name: "Bob"};
-  // on DOM button click event
-  pubSub.publish("form:button:click", ["save", user]);
-}
-
-// app.js
-function runApp() {
-  MessagesController(pubSub);
-  FormController(pubSub);
-}
-//runApp();
+//pubSubExampleUsage(pubSub);
