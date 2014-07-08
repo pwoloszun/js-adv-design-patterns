@@ -15,5 +15,7 @@ function statefulExampleUsage(mixin, Stateful) {
   bob.set("name", 123);
   bob.set("birthDate", new Date());
   bob.get("name");
-  bob.toJSON();
+
+  bob.xxx = 1
+//  bob.toJSON();
 }
