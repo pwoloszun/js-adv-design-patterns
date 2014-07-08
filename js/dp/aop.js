@@ -27,7 +27,8 @@ function aopExampleUsage() {
 
   aop.around(bob, "setName", function() {
     console.log("AROUND before setName", arguments);
-    this.yield();
+    // yield === wynik oryginalnego bob.setName("Bob II");
+    var originalResult = this.yield(); // this != bob
     console.log("AROUND after setName", arguments);
   });
 
