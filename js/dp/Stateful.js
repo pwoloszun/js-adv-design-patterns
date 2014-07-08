@@ -1,4 +1,5 @@
-// Implement Stateful class using Evented
+// Implement Stateful role (Singleton)
+// Reuse: mixin and Evented role
 function statefulExampleUsage(mixin, Stateful) {
   var bob = {};
   mixin(bob, Stateful);
@@ -16,6 +17,5 @@ function statefulExampleUsage(mixin, Stateful) {
   bob.set("birthDate", new Date());
   bob.get("name");
 
-  bob.xxx = 1
 //  bob.toJSON();
 }
