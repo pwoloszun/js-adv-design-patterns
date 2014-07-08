@@ -20,7 +20,7 @@ function mixinClassExampleUsage(mixin) {
 }
 //mixinClassExampleUsage(mixin);
 
-function mixinInstanceExampleUsage() {
+function mixinInstanceExampleUsage(mixin) {
   var bob = {name: "Bob"};
 
   // TODO: create modules (Singletons):
@@ -36,6 +36,6 @@ function mixinInstanceExampleUsage() {
   mixin(bob, Dancer);
 
   bob.teach();
-  bob.dance();
+  bob.dance(); // logs "dance"
 }
 //mixinInstanceExampleUsage(mixin);
