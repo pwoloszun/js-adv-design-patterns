@@ -26,3 +26,9 @@ function app(pubSub) {
 }
 
 //appPubSubSolution(pubSub);
+function app(pubSub) {
+  FormController().on("button:click", function() {
+    MessagesController.displayNotification();
+    logService.log();
+  });
+}
