@@ -6,21 +6,21 @@
 function proxyTest(cachedUserRepository) {
   var allUsers, user;
 
-  // sends aJAX request
   cachedUserRepository.findAll(function(users) {
+    console.log("should send AJAX request");
     assertEqual(users.length, 3);
   });
 
   setTimeout(function() {
-    // returns cached results
     cachedUserRepository.findAll(function(users) {
+      console.log("should return cached results");
       assertEqual(users.length, 3);
     });
   }, 3000);
 
   setTimeout(function() {
-    // sends aJAX request
     cachedUserRepository.findAll(function(users) {
+      console.log("should send new AJAX request");
       assertEqual(users.length, 3);
     });
   }, 6000);
