@@ -9,9 +9,14 @@ function mixinClassExampleUsage(mixin) {
     return this.login;
   };
 
-  // TODO: create Encryptable module (Singleton) with methods:
-  // + encryp t(propertyName)
-  // + getEncrypted(propertyName)
+  var Encryptable = {
+    encrypt: function(propertyName) {
+      log("encrypt", arguments);
+    },
+    getEncrypted: function(propertyName) {
+      log("getEncrypted", arguments);
+    }
+  };
   mixin(User.prototype, Encryptable);
 
   var user = new User("bob");
@@ -24,11 +29,15 @@ function mixinInstanceExampleUsage(mixin) {
   var bob = {name: "Bob"};
 
   // TODO: create modules (Singletons):
-  // + Teacher with methods: teach()
   // + Dancer with methods: dance()
   var Teacher = {
     teach: function() {
-      console.log("teach");
+      console.log("teach", this);
+      // this.teachingSkill === 1
+    },
+    afterMixed: function() {
+      if (!this.hasOwnProperty('teachingSkill'))
+        this.teachingSkill = 1;
     }
   };
 
