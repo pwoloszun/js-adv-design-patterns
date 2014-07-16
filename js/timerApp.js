@@ -48,4 +48,4 @@ function timerApp() {
 //    timer.start();
 //  }, 19000);
 }
-//timerExampleUsage();
+timerApp();
