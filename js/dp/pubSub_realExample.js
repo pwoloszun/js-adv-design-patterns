@@ -1,34 +1,45 @@
 //=== "Real Life" example ===
 
-// MessagesController.js
-function MessagesController(pubSub) {
+// MessagesView.js
+function MessagesView() {
+
+  this.displayNotification = function() {
+  };
+  var that = this;
+
   pubSub.subscribe("form:button:click", function(action, user) {
-    // display notifications
-    console.log("displayNotification() TODO", action, user);
+    that.displayNotification();
   });
 }
 
-// FormController.js
-function FormController(pubSub) {
-  var user = {name: "Bob"};
-  // on DOM button click event
-  pubSub.publish("form:button:click", ["save", user]);
+// FormView.js
+function FormView() {
+
+  this.onBtnClick = function() {
+    var user = {name: "Bob"};
+    // on DOM button click event
+    pubSub.publish("form:button:click", ["save", user]);
+  };
 }
 
-// Logger.js TODO
+// pub/sub solution
+function app() {
+  var messagesView = new MessagesView();
+  var formView = new FormView();
 
-// EmailNotifier.js TODO
-
-// app.js
-function app(pubSub) {
-  MessagesController(pubSub);
-  FormController(pubSub);
+  // ...
+  formView.onBtnClick();
 }
 
-//appPubSubSolution(pubSub);
-function app(pubSub) {
-  FormController().on("button:click", function() {
-    MessagesController.displayNotification();
-    logService.log();
+// Observer/Evented solution
+function app() {
+  var messagesView = new MessagesView();
+  var formView = new FormView();
+
+  formView.on("btn:clicked", function() {
+    messagesView.displayNotification();
   });
+
+  // ...
+  formView.onBtnClick();
 }
