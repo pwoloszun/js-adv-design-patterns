@@ -1,4 +1,4 @@
-// Implement pubSub service using Evented.
+// TODO: Implement pubSub service (as Singleton) using: mixin & Evented
 function pubSubExampleUsage(pubSub) {
   pubSub.subscribe("buttonClick", function() {
     log("buttonClicked published", arguments);
