@@ -34,10 +34,6 @@ function mixinInstanceExampleUsage(mixin) {
     teach: function() {
       console.log("teach", this);
       // this.teachingSkill === 1
-    },
-    afterMixed: function() {
-      if (!this.hasOwnProperty('teachingSkill'))
-        this.teachingSkill = 1;
     }
   };
 
