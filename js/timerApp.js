@@ -8,22 +8,22 @@ function timerApp() {
   // on(eventName, listener) - assigns listener to given eventName ("start", "pause", "tick", "end")
   // triggered when timer is started
   timer.on("start", function(currentStep) {
-    console.log("started at: " + currentStep);
+    console.log("started step no.", currentStep);
   });
 
   // triggered when timer finishes or has been stopped
   timer.on("end", function(currentStep) {
-    console.log("ended at: " + currentStep);
+    console.log("ended step no.", currentStep);
   });
 
   // triggered when timer is paused
   timer.on("pause", function(currentStep) {
-    console.log("paused at: " + currentStep);
+    console.log("paused step no.", currentStep);
   });
 
   // triggers every step seconds
   timer.on("tick", function(currentStep) {
-    console.log("current time: " + currentStep);
+    console.log("tick step no.", currentStep);
   });
 
   // start() - starts timer
